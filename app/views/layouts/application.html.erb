@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+
+      <link href="/assets/style.css" rel="stylesheet" />
+      <!-- <link href="/assets/articles.css" rel="stylesheet" /> -->
+      <link href="/assets/jtj.css" rel="stylesheet" />
+      <link href="/assets/components/partial/collapse.css" rel="stylesheet" />
+      <script src="/assets/jquery.js"></script>
+      <script src="/assets/bootstrap.min.js"></script>
+      <script src="/assets/menu.js"></script>
+      <script src="/assets/search.js"></script>
+      <script src="/assets/search.js"></script>
+      <script src="/assets/main/index.js"></script>
+      
+    <title>Watermarker</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+	<%= render 'layouts/header' %>
+  <body>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

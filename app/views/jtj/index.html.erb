@@ -1,0 +1,420 @@
+<div class="container hidden-xs">
+  <div class="row countdown" id="countdown_content">
+  <!--  <div class="expand-colum countdown-content">
+       <div class="countdown-left">
+        <img src="/assets/Left Arrow.svg" class="countdown-icon">
+      </div>
+    </div>
+    <div class="expand-colum countdown-content coundown-border">
+      <div class="counter-text">
+         <p>mon</p>
+        <p>08.01</p>
+      </div>
+    </div>
+    <div class="expand-colum countdown-content coundown-border">
+      <div class="counter-text">
+        <p>tues</p>
+        <p>08.02</p>
+      </div>
+    </div>
+    <div class="expand-colum countdown-content coundown-border">
+      <div class="counter-text">
+          <p>wed</p>
+          <p>08.03</p>
+      </div>
+    </div>
+    <div class="expand-colum countdown-content coundown-border">
+      <div class="counter-text">
+        <p>thurs</p>
+        <p>08.04</p>
+      </div>
+    </div>
+    <div class="expand-colum countdown-content coundown-border">
+      <div class="counter-text">
+        <p>fri</p>
+        <p>08.05</p>
+      </div>
+    </div>
+    <div class="expand-colum countdown-content coundown-border">
+      <div class="counter-text">
+        <p>mon</p>
+        <p>08.08</p>
+      </div>
+    </div>
+    <div class="expand-colum countdown-content">
+      <div class="countdown-right">
+        <img src="/assets/Right Arrow.svg" class="countdown-icon">
+        </div>
+      </div> -->
+  </div>
+</div>
+<div class="container visible-xs">
+  <div class="row countdown">
+    <div class="col-xs-4 countdown-content">
+      <div class="countdown-left ">
+        <img src="/assets/Left Arrow.svg" class="countdown-icon">
+      </div>
+    </div>
+    <div class="col-xs-4 countdown-content coundown-border">
+      <div class="counter-text">
+
+        <p>mon</p>
+        <p>08.08</p>
+      </div>
+    </div>
+    <div class="col-xs-4 countdown-content">
+      <div class="countdown-right">
+        <img src="/assets/Right Arrow.svg" class="countdown-icon">
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="signup-popup">
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+    <div class="missout-rem-close" data-parent=".signup-popup">
+      <img src="/assets/close.png" alt="close">
+    </div>
+  </div>
+  <div class="col-lg-11 col-md-11 col-sm-11 col-xs-12">
+    <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 nopadding">
+      <div class="signup-padding">
+        <p class="jointojourney">Sign up to JOINTHEJOURNEY!</p>
+        <p class="next-stream-text">Signup to receive daily devotionals via email.</p>
+          <form>
+            <div>
+              <input type="text" name="firstname" class="input-address" placeholder=" First Name" required="true">
+            </div>
+            <div>
+              <input type="text" name="lastname" class="input-address" placeholder="Last Name" required="true">
+            </div>
+            <div>
+              <input type="email" name="email" class="input-address" placeholder="Email Address" required="true">
+            </div>
+              <input type="submit" value="Click Here to Join the Journey" class=" signup-popupbtn">
+            <div class="reminder-action hidden-xs"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="col-xs-12 visible-xs nopadding content-fixed">
+  <img class="jtj-icon signup-menu" src="/assets/jtj.svg" alt="jtj">
+</div>
+<div class="hidden-xs">
+  <img src="/assets/Bible Icon Orange.svg" class="float-icon signup-menu"></div>
+    <div class="container bottom">
+      <div class="section-event-bg-img">
+        <div class="row margin-row">
+          <div class="socialicons text-center">
+            <ul>
+              <li><a target="_blank" href=""><img src="/assets/fb.png" alt="Facebook" class="socialicon"></a></li>
+              <li><a target="_blank" href=""><img src="/assets/tw.png" alt="Twitter" class="socialicon"></a></li>
+              <li><a target="_blank" href=""><img src="/assets/mail.png" alt="Instagram" class="socialicon"></a></li>
+            </ul>
+          </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 highlighted-story-padding">   <p class="highlighted-story-content hidden-xs">
+              Wondering where you left off? Click here   
+              <img src="/assets/Track Back Icon-02.svg" class="track-icon">
+          </p>
+          <i>
+            <p class="highlighted-story-italic">August 1, 2017</p>
+          </i>
+          <i>
+            <p class="highlighted-story-title">
+                <%=@entityResponse[0]["entry"]["title"] %>
+            </p>
+          </i>
+          <p class="highlighted-story-verse">
+                <%=@entityResponse[0]["entry"]["scripture"]["reference"]%>
+          </p>
+        <i>
+          <p class="highlighted-story-comments">13 Comments | Listen | Print
+          </p>
+        </i>
+          <p class="highlighted-story-text" id="html-renderer-selector">
+            <% @entityResponse[0]["entry"]["scripture"]["html"] %>
+          </p>
+      </div>
+    <div class="text-center hidden-md visible-xs">
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+    <div class="section-blurred-bg">
+      <p class="section-latest-title">Key Verse | <span>Romans 1:5-6</span></p>
+      <i>
+        <p class="section-latest-content" id="html-renderer-key-verse">
+        <% @entityResponse[0]["entry"]["key_verse"] %>
+        </p></i>
+      <div  id="return-to-top">
+        <i>
+          <img src="/assets/chevron-arrow-up.png" class="section-latest-top-icon hidden-xs">
+        </i>
+        <p class="top-icontext hidden-xs">Go to top</p>
+      </div>
+    </div>
+    <script type="text/javascript">
+          $("#html-renderer-key-verse").html(`<%= @entityResponse[0]["entry"]["key_verse"] %>`)
+          var key_verse = $('#html-renderer-key-verse').text();
+          $("#html-renderer-key-verse").html(key_verse);
+
+
+          </script>
+
+  <div class="">
+    <h2 class="section-event-title">Central Truth</h2>
+       <p class="section-event-contents" id="html-renderer">
+       <%@entityResponse[0]["entry"]["centralTruth"]%>
+       </p>
+        <i>
+          <p class="section-event-text">
+          Among whom you in the same way have been  marked out to be disciples of Jesus Christ
+          </p>
+        </i>
+              
+  </div>
+
+  <div class="section-blurred-bg">
+    <p class="section-latest-title">
+      Devotional | <span>Proverbs 1:20-23</span></p>
+      <i>
+        <p class="section-latest-content" id="html-renderer-devotional">
+           <%= @entityResponse[0]["entry"]["devotional"] %>
+        </p>
+      </i>
+
+  <div class="text-center">
+    <button class="btn devotional-button hidden-xs">
+        Show Less
+    </button>
+      <i>
+        <p class="section-comments-text hidden-xs">
+          See Comments
+        </p>
+      </i>
+  </div>
+  
+  <div class="text-center btn-center visible-xs">
+    <button class="btn devotional-button">
+      Read Devotional
+    </button>
+    <i>
+      <p class="section-comments-text visible-xs">
+        See Comments
+      </p>
+    </i>
+  </div>
+</div>
+
+<div class="bottom">
+  <h2 class="section-event-title">
+    Bio | <span><%= @entityResponse[0]["entry"]["writer"]["name"] %></span>
+  </h2>
+  
+  <i> 
+    <p class="bio-scott">
+      <%= @entityResponse[0]["entry"]["writer"]["twitter_handle"] %></p>
+  </i>
+
+  <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12 text-center">
+    <div class="highlighted-story-media"></div>
+  </div>
+  
+  <div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
+    <p class="bio-content">
+      <%= @entityResponse[0]["entry"]["writer"]["bio"] %>
+    </p>
+  </div>
+<div class="text-center">
+  <button class="btn bio-button hidden-x">
+s    Sign Up to Join The Journey
+  </button>
+</div>
+
+  <div class="text-center btn-center visible-xs">
+    <button class="btn bio-button ">Sign Up</button>
+  </div>
+
+  <div  id="return-to-top1">
+    <img src="/assets/Up Arrow.svg" class="bio-latest-top-icon hidden-xs">
+      <p class="top-coloricon hidden-xs">Go to top</p>
+    </div>
+  </div>
+</div>
+
+<div id="myCarousel" class="carousel slide section-blurred-bg" data-ride="carousel">
+  <h2 class="section-latest-title">
+    Scripture Memory | <span>Romans 1:5-6</span>
+  </h2>
+  
+  <!-- Indicators -->
+    <!-- Wrapper for slides -->
+  <div class="carousel-inner slider-inner">
+    <div class="item active">
+      <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+          <i>
+            <p class="content-slider">
+              <sup>5</sup> Through whom grace has been given to us, sending us out to make disciples to the faith among all nations, for his name: <sup>6</sup> Among whom you in the same way have been marked out to be disciples of Jesus Christ
+            </p>
+          </i>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+          <i>
+            <p class="content-slider">
+              <sup>5</sup> Through whom grace has been given to us, sending us out to make disciples to the faith among all nations, for his name: <sup>6</sup> Among whom you in the same way have been marked out to be disciples of Jesus Christ
+            </p>
+          </i>
+        </div>
+      </div>
+    </div>
+   
+    <div class="item">
+      <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+          <i>
+            <p class="content-slider">
+              <sup>5</sup> Through whom grace has been given to us, sending us out to make disciples to the faith among all nations, for his name: <sup>6</sup> Among whom you in the same way have been marked out to be disciples of Jesus Christ
+            </p>
+          </i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Left and right controls -->
+      <a class="left carousel-control slider-control" href="#myCarousel" data-slide="prev">
+         <img src="/assets/Left Arrow.svg" class="slider-icon"></a>
+            <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control slider-control" href="#myCarousel" data-slide="next">
+        <img src="/assets/Right Arrow.svg" class="slider-icon">
+          <span class="sr-only">Next</span>
+      </a>
+      <div class="text-center">
+        <button class="btn devotional-button hidden-xs">
+          Download Lock Screen
+        </button>
+      </div>
+        
+      <div class="text-center btn-center visible-xs">
+        <button class="btn devotional-button">Download Screen</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="socialicons text-center footer-socialcontent">
+    <ul>
+      <li>
+        <a target="_blank" href="">
+            <img src="/assets/fb.png" alt="Facebook" class="socialicon">
+          </a>
+      </li>
+      <li>
+        <a target="_blank" href="">
+          <img src="/assets/tw.png" alt="Twitter" class="socialicon">
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" href="">
+          <img src="/assets/mail.png" alt="Instagram" class="socialicon">
+            </a>
+      </li>
+    </ul>
+    
+    <i>
+      <a href="#" class="conditions"> 
+        <p class="terms">Terms & conditions</p>
+      </a>
+    </i>
+  </div>
+</div>
+  
+  <div class="container">
+    <h3 class="app-header">Download The App</h3>
+      <div class="row app-content">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 app-iconcontent">
+            <a href=""><img src="/assets/App_Store-01.svg" class="app-icon"></a>
+          </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 google-iconcontent">
+          <a href="">
+            <img src="/assets/Google_Play-01.svg" class="google-icon">
+          </a>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ios">
+        <button class="btn ios-btn">iOS</button>
+      </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 app">
+        <button class="btn android-btn">Android
+        </button>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+  var dateArray = [];
+  var startDate = `<%= @entityData["params"]["start_date"]%>`;
+  var endDate = `<%= @entityData["params"]["end_date"]%>`;
+
+  var From_date = new Date(startDate);
+  var To_date = new Date(endDate);
+  var diff_date =  (To_date - From_date)/1000/60/60/24;
+
+   Date.prototype.addDays = function(days) {
+       var dat = new Date(this.valueOf())
+       dat.setDate(dat.getDate() + days);
+       return dat;
+   }
+
+   function getDates(startDate, stopDate) {
+      var dateArray = new Array();
+      var currentDate = startDate;
+      while (currentDate <= stopDate) {
+        dateArray.push(currentDate)
+        currentDate = currentDate.addDays(1);
+      }
+      return dateArray;
+    }
+
+    var dateArray = getDates(From_date, To_date);
+    var appendData='<div class="expand-colum countdown-content"><div class=countdown-left><img class=countdown-icon src="/assets/Left Arrow.svg"></div></div>';
+
+    for (i = 0; i < 6; i ++ ) {
+        console.log ("Day name"+dateArray[i].toString().split(' ')[1]+ "Day"+dateArray[i]);
+        var month = dateArray[i].toString().split(' ')[1];
+        var date = dateArray[i].toString().split(' ')[2];
+        var year = dateArray[i].toString().split(' ')[3];
+        appendData += '<div class="coundown-border countdown-content expand-colum" onclick=dateSelection("'+dateArray[i]+'");"><div class=counter-text><p>'+month+" "+date+'<p>'+year+'</div></div>';
+    }
+
+    appendData += '<div class="countdown-content expand-colum"><div class=countdown-right><img class=countdown-icon src="/assets/Right Arrow.svg"></div></div>';
+
+    $("#countdown_content").append(appendData);
+
+    function dateSelection(argument) {
+      alert(argument)
+      // body...
+    }
+
+  $("#html-renderer-selector").html(`<%= @entityResponse[0]["entry"]["scripture"]["html"] %>`)
+  var scripture = $('#html-renderer-selector').text();
+  $("#html-renderer-selector").html(scripture);
+
+  $("#html-renderer-devotional").html(`<%=@entityResponse[0]["entry"]["centralTruth"]%>`)
+  var obj1 = $('#html-renderer-devotional').text();
+  $("#html-renderer-devotional").html(obj1);
+
+  $("#html-renderer").html(`<%=@entityResponse[0]["entry"]["centralTruth"]%>`)
+  var obj1 = $('#html-renderer').text();
+  $("#html-renderer").html(obj1);
+
+</script>
+

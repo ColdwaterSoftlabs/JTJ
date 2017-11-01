@@ -1,0 +1,3 @@
+module Jquary
+  # Your code goes here...
+end

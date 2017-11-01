@@ -1,0 +1,20 @@
+shared_settings: &shared_settings
+  project_name: ""
+  watermarkchurchURL: "https://virtserver.swaggerhub.com/watermark/jtj/0"
+
+  
+development: &non_production_settings
+  <<: *shared_settings
+  domain: localhost:3000
+
+test:
+  <<: *non_production_settings
+  <<: *shared_settings
+
+staging:
+  <<: *non_production_settings
+  <<: *shared_settings
+
+production:
+  disqus_short_name: goforclass
+  <<: *shared_settings
