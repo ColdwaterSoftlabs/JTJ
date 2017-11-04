@@ -1,6 +1,9 @@
 shared_settings: &shared_settings
   project_name: ""
   watermarkchurchURL: "https://virtserver.swaggerhub.com/watermark/jtj/0"
+  sendgrid_username: "shaik.rabbit"
+  sendgrid_password: "Rabbit*123"
+  sendgrid_domain: "https://jtj.herokuapp.com"
 
   
 development: &non_production_settings
@@ -16,5 +19,6 @@ staging:
   <<: *shared_settings
 
 production:
-  disqus_short_name: goforclass
+  disqus_short_name: watermark
+  domain: jtj.herokuapp.com
   <<: *shared_settings
