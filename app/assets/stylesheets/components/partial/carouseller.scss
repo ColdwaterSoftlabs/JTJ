@@ -1,0 +1,107 @@
+/*carouseller.js 0.32b https://github.com/shrue348/responsive.carouseller Open source under the MIT License. Copyright © 2015-2017 Aleksander Alekseev All rights reserved.*/
+.carouseller:before, .carouseller:after {  content: " ";  display: table;}
+.carouseller:after { clear: both;}
+.carouseller { position: relative;}
+
+.carouseller [class*="car-"]{
+	display: inline-block; 
+	position: relative;
+    margin-left: 0.2564102564102564% !important;
+    *margin-left: 0.25109110747408616% !important;
+    float: left;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.carouseller [class*="car-"]:first-child  { margin-left: 0 !important;}
+.carouseller [class*="car-"]:nth-child(n+7) { display: none;}
+
+.carouseller .car-by5 { width: 1.793789743589745%;}
+.carouseller .car-12 { width: 10%;}
+.carouseller .car-6 { width: 4.8837948717948715%;}
+.carouseller .car-4 { width: 3.1703931623931625%;}
+.carouseller .car-3 { width: 1.7136923076923077%;margin-top: 12px !important;
+    margin-bottom: 12px !important;}
+.carouseller .car-2 { width: 1.452991452991453%;}
+.carouseller .car-1 { width: 0.5982905982905983%;}
+
+.carouseller .carouseller-list { position: relative; width: 997.4358974358974%;margin-left: 45px;
+    margin-right: 45px;}
+.carouseller .carouseller-wrap { overflow: hidden; position: relative; margin: 0 75px;}
+
+.carouseller .carouseller-left, 
+.carouseller .carouseller-right {
+	position: absolute; 
+	margin: 0; 
+	bottom: 25px;
+    background: none repeat scroll 0 0 transparent;
+    font-size: 80px;
+    opacity: 1 !important;
+    text-align: center;
+	color: red;
+	text-decoration: none;
+}
+.carouseller .carouseller-left { left: 40 !important;}
+.carouseller .carouseller-right { right: 40 !important;}
+.carouseller .carouseller-left:hover, .carouseller .carouseller-:hover { opacity: 0.8;}
+
+.carouseller-border{border-left:1px solid white;margin-top:15px; margin-bottom:15px;}
+.carouseller-borderright{border-right:1px solid white; margin-top:15px; margin-bottom:15px;}
+.carouseller {
+    margin-bottom: 0px !important;
+    background-color: black;margin-top: -49px !important;height:100px !important;
+}
+.carouseller .carouseller-left, .carouseller .carouseller-right {
+	position: absolute; 
+	margin: 0; 
+	bottom: 40px !important;
+   font-size: 60px !important;
+    opacity: 0.5;
+    text-align: center;
+	text-decoration: none;  height: 58px;color:rgba(171, 51, 15, 0.65) !important;
+}
+.carouseller-content{font-size:24px;font-family: 'Lato-Semibold';}
+.carouseller-time{font-size:24px;font-family: 'Lato-Light';}
+/*------Responsive-----------*/
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+	.carouseller .car-by5,
+	.carouseller .car-12,
+	.carouseller .car-6,
+	.carouseller .car-4,
+	.carouseller .car-3,
+	.carouseller .car-2,
+	.carouseller .car-1 { width: 1.7623931623931625%;}
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.carouseller .car-by5,
+	.carouseller .car-12,
+	.carouseller .car-6,
+	.carouseller .car-4,
+	.carouseller .car-3,
+	.carouseller .car-2,
+	.carouseller .car-1 { width: 6.9717948717948715% !important;}
+	.carouseller-border {
+    border-left: 1px solid transparent;}
+	.carouseller [class*="car-"]:first-child {
+    margin-left: -24px !important;
+}
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.carouseller .car-by5,
+	.carouseller .car-12,
+	.carouseller .car-6,
+	.carouseller .car-4,
+	.carouseller .car-3,
+	.carouseller .car-2,
+	.carouseller .car-1 { width: 10%;}
+}
+
+
+
+/* This can be deleted */
+[class*="car-"] { text-align: center; font-size: 30px; font-weight: bold;color:white;}
+h1 {font-size: 40px; margin-bottom: 30px;}
+.carouseller { margin-bottom: 20px;background-color:black;}

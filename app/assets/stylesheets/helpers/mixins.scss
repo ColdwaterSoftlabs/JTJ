@@ -1,0 +1,10 @@
+@mixin button{
+   background-color: transparent;
+    border: 1px solid $color;padding-left:65px;padding-right:65px;padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 23px;border-radius: 1px; 
+}
+@mixin font{
+font-family: 'Lato-Semibold';
+font-size:24px;
+}
