@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 set :environment, "development"
-every 1.days do
+every 2.minutes do
   rake "user_notice:notice_not_confirm"
 end  
