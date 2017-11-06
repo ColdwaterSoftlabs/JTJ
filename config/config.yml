@@ -3,7 +3,7 @@ shared_settings: &shared_settings
   watermarkchurchURL: "https://virtserver.swaggerhub.com/watermark/jtj/0"
   sendgrid_username: "shaik.rabbit"
   sendgrid_password: "Rabbit*123"
-  sendgrid_domain: "https://jtj.herokuapp.com"
+  sendgrid_domain: "www.driverskart.com"
 
   
 development: &non_production_settings
