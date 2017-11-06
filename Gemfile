@@ -35,6 +35,7 @@ gem 'jquery-fileupload-rails'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'sendgrid-ruby'
 gem 'whenever', :require => false
+gem 'delayed_job_active_record'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
