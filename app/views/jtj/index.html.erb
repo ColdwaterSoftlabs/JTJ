@@ -273,6 +273,17 @@ s    Sign Up to Join The Journey
       </div>
     </div>
   </div>
+  <hr>
+  <div class="discourse-comments">
+    <% @posts.each do |post| %>
+      <div class='comments'>
+        <p><%= post['name'] %></p>
+        <%= post['cooked'].html_safe %>       
+        <p><%= post['reply_count'] %> reply</p>
+      </div>
+      <hr>
+    <% end %>
+  </div>
 
   <div class="socialicons text-center footer-socialcontent">
     <ul>
