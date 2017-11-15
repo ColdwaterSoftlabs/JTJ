@@ -2,3 +2,5 @@
 *.log
 *.pid
 *.log
+config/.env
+tmp/*

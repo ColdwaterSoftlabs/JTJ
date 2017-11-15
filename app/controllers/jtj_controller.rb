@@ -36,9 +36,9 @@ class JtjController < ApplicationController
 	private
 
 	def set_discourse_credentials
-		@url = "http://discourse.coldwatersl.in"
-		@api_key = "69c1ba0560a33bd00d3914edb542aa9658b2cbefffe28ab56f7207274d141f13"
-		@api_username = "daniel"
+		@url = ENV["DISCOURSE_URL"]
+		@api_key = ENV["DISCOURSE_API_KEY"]
+		@api_username = ENV["DISCOURSE_API_USERNAME"]
 	end
 
 	def fetch_discource_topic topic_id 
