@@ -22,28 +22,25 @@ class JtjController < ApplicationController
 			# @todayNews=@val["latest_entry"]["scripture"]["html"];
 			# UserEmailNotificationMailer.send_email_notify(@todayNews).deliver
 		end
-		response = fetch_discource_topic 14
-		if response.code == 200
-			content = JSON.parse(response.body)
-			posts_count = content["posts_count"]
-			@posts = content["post_stream"]["posts"]
-			p @posts
-		else
-			p "error fetching topic"
-		end
+		content = fetch_discource_topic 14
+		posts_count = content["posts_count"]
+		@posts = content["post_stream"]["posts"]
+		p @posts
 	end
 
 	private
 
 	def set_discourse_credentials
-		@url = ENV["DISCOURSE_URL"]
-		@api_key = ENV["DISCOURSE_API_KEY"]
-		@api_username = ENV["DISCOURSE_API_USERNAME"]
+		@client = DiscourseApi::Client.new(ENV["DISCOURSE_URL"])
+		@client.api_key = ENV["DISCOURSE_API_KEY"]
+		@client.api_username = ENV["DISCOURSE_API_USERNAME"]
 	end
 
 	def fetch_discource_topic topic_id 
-		url = "#{@url}/t/#{topic_id}.json?api_key=#{@api_key}&api_username=#{@api_username}"
-		p url
-		response = RestClient.get(url)
+		@client.topic(topic_id)
+	end
+
+	def create_discourse_post topic_id, post
+		@client.create_post(topic_id: topic_id, raw: post)
 	end
 end
