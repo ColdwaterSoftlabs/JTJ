@@ -16,10 +16,5 @@ class JtjController < ApplicationController
 	           	error: e.to_s
 	           	}, status: :not_found
 		end
-		if @todayNews.nil?
-		else
-			@todayNews=@val["latest_entry"]["scripture"]["html"];
-			UserEmailNotificationMailer.send_email_notify(@todayNews).deliver
-		end
 	end
 end
