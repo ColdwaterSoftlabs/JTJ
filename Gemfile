@@ -38,6 +38,7 @@ gem 'whenever', :require => false
 gem 'delayed_job_active_record'
 
 gem 'rest-client'
+gem 'discourse_api'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
