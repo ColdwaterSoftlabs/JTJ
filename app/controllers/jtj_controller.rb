@@ -28,6 +28,12 @@ class JtjController < ApplicationController
 		p @posts
 	end
 
+	def comment
+		post = params[:comment]
+		create_discourse_post 14, post
+		redirect_to root_path
+	end
+
 	private
 
 	def set_discourse_credentials

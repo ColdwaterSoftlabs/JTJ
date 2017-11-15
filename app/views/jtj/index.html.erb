@@ -274,6 +274,15 @@ s    Sign Up to Join The Journey
     </div>
   </div>
   <hr>
+  <%= form_tag ('comment') do %>
+ 
+  <%= label_tag 'comment', 'Comment' %>
+  <br>
+  <%= text_area_tag 'comment' %>
+  <br> 
+  <%= submit_tag "Comment"%>
+<% end %>
+<hr>
   <div class="discourse-comments">
     <% @posts.each do |post| %>
       <div class='comments'>
