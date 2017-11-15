@@ -27,14 +27,12 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.perform_caching = false
+  # config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-
-  # config.action_mailer.delivery_method = :letter_opener
 
   # Raise an error on page load if there are pending migrations.
   #config.active_record.migration_error = :page_load
@@ -49,14 +47,14 @@ Rails.application.configure do
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)
 
-  config.action_mailer.smtp_settings = {
-      :address              => 'smtp.sendgrid.net',
-      :port                 => 587,
-      :domain               => APP_CONFIG[:sendgrid_domain],
-      :user_name            => APP_CONFIG[:sendgrid_username],
-      :password             => APP_CONFIG[:sendgrid_password],
-      :enable_starttls_auto => true
-  }
+  # config.action_mailer.smtp_settings = {
+  #     :address              => 'smtp.sendgrid.net',
+  #     :port                 => 587,
+  #     :domain               => APP_CONFIG[:sendgrid_domain],
+  #     :user_name            => APP_CONFIG[:sendgrid_username],
+  #     :password             => APP_CONFIG[:sendgrid_password],
+  #     :enable_starttls_auto => true
+  # }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

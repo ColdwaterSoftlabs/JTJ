@@ -1,9 +1,13 @@
 shared_settings: &shared_settings
   project_name: ""
   watermarkchurchURL: "https://virtserver.swaggerhub.com/watermark/jtj/0"
-  sendgrid_username: "shaik.rabbit"
-  sendgrid_password: "Rabbit*123"
-  sendgrid_domain: "www.driverskart.com"
+  sendgrid_username: ""
+  sendgrid_password: ""
+  sendgrid_domain: ""
+  JTJ_APPLICATION_ID: "628bd5d4ed42c26bbe7dbf8569b86ed3b4a50d21be4fb78ebf49884ea946a94f"
+  JTJ_APPLICATION_SECRET_KEY: "9c41c750bc329b2a49f91c8c01570c4798bbce9b518a56b4cb1d0c0eca64e668"
+  OAUTH_BASE_URL: "https://login.watermark.org/users/sign_up"
+  OAUTH_CALL_BACK_URL: "https://jtj-dev.herokuapp.com/callback"
 
   
 development: &non_production_settings
