@@ -333,7 +333,7 @@ $( document ).ready(function() {
 
   var startDate = `<%= @val["curriculum"]["start_date"]%>`;
   var endDate   = `<%= @val["curriculum"]["end_date"]%>`;
-  var rootURL   = (`<%="#{APP_CONFIG[:watermarkchurchURL]}"%>`);
+  var rootURL   = (`<%="#{ENV['WATERMARKCHURCH_URL']}"%>`);
 
   var From_date = new Date(startDate);
   var To_date = new Date(endDate);

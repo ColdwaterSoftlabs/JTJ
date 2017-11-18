@@ -6,7 +6,7 @@ class JtjController < ApplicationController
 	def index
 		@todayNews={}
 	 	begin
-			url = "#{APP_CONFIG[:watermarkchurchURL]}/"
+			url = ENV['WATERMARKCHURCH_URL']
 			uri = URI(url)
 			response = Net::HTTP.get(uri)
 			@val = JSON.parse(response)
