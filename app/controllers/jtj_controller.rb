@@ -11,10 +11,12 @@ class JtjController < ApplicationController
 			response = Net::HTTP.get(uri)
 			@val = JSON.parse(response)
 	  	rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
-	       Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-	           render json: {
-	           	error: e.to_s
-	           	}, status: :not_found
+	       Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError, JSON::ParserError => e
+	           # render json: {
+	           # 	error: e.to_s
+	           # 	}, status: :not_found
+	           p e
+	           @val = {}
 		end
 	end
 end
