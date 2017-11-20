@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
    	# get 'jtj/index'
   	root 'jtj#index'
   	resources :jtj, only: [:index]
