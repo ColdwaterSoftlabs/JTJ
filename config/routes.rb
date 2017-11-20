@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'user/new'
+
+  get 'user/index'
+
+  get 'user/destroy'
+
   devise_for :users
    	# get 'jtj/index'
   	root 'jtj#index'
