@@ -50,6 +50,10 @@ class JtjController < ApplicationController
 	end
 
 	def set_username
-		@username = current_user.username
+		if user_signed_in?
+			@username = current_user.username
+		else
+			@username = ENV["DISCOURSE_API_USERNAME"]
+		end
 	end
 end
