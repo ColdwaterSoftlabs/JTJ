@@ -35,9 +35,10 @@ class JtjController < ApplicationController
 	private
 
 	def set_discourse_credentials
+		set_username
 		@client = DiscourseApi::Client.new(ENV["DISCOURSE_URL"])
 		@client.api_key = ENV["DISCOURSE_API_KEY"]
-		@client.api_username = ENV["DISCOURSE_API_USERNAME"]
+		@client.api_username = @username
 	end
 
 	def fetch_discource_topic topic_id 
@@ -46,5 +47,9 @@ class JtjController < ApplicationController
 
 	def create_discourse_post topic_id, post
 		@client.create_post(topic_id: topic_id, raw: post)
+	end
+
+	def set_username
+		@username = current_user.username
 	end
 end
