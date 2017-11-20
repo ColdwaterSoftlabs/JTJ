@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   	resources :jtj, only: [:index]
   	get '/callback', to: 'sessions#create' #OAUTH Call Back URL
   	get '/login', to:'oauth#oauth_create'
+  	post '/comment' => 'jtj#comment'
 end
