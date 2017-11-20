@@ -9,8 +9,8 @@ class OauthController < ApplicationController
 		get_user_details token['access_token']
 		# get_user_details "accesstokenabcedefk"
 		p 'token created'
-		# render json: token
-		redirect_to root_path 
+		render json: token
+		# redirect_to root_path 
 	end
 
 	private
