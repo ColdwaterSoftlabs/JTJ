@@ -37,6 +37,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jquery-fileupload-rails'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'oauth2', '~> 1.2'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
