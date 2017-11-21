@@ -37,7 +37,10 @@ class SessionsController < ApplicationController
 	def create_user email, username
 		generated_password = Devise.friendly_token.first(8)
 		discourse_email = "#{username}@jtj.com" #should be changed to dummy email, not from the user details email
-		@user = User.create!(email: email, password: generated_password, password_confirmation: generated_password, username: username, discourse_email: discourse_email)
+		@user = User.find_by_email(email)
+		unless @user.present?
+			@user = User.create!(email: email, password: generated_password, password_confirmation: generated_password, username: username, discourse_email: discourse_email)
+		end
 		p "User created Successfully"
 		sign_in(@user)
 		p "User signed in Succesfully"
