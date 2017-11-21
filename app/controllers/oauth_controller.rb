@@ -1,6 +1,5 @@
 require 'oauth2'
 class OauthController < ApplicationController
-	before_action :set_discourse_credentials
 
 	def oauth_create
 		client_id = ENV['JTJ_APPLICATION_ID']
