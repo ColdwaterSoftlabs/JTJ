@@ -7,8 +7,8 @@ class OauthController < ApplicationController
 		site = ENV['WATERMARK_BASE_URL']
 		redirect_uri = ENV['REDIRECT_URI']
 		client = OAuth2::Client.new(client_id, client_secret, :site => site)
-		client.auth_code.authorize_url(:redirect_uri => redirect_uri)
-		render json: "success"
+		authorize_url = client.auth_code.authorize_url(:redirect_uri => redirect_uri)
+		redirect_to authorize_url
 	end
 
 	
