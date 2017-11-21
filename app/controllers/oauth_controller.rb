@@ -7,8 +7,8 @@ class OauthController < ApplicationController
 		client.auth_code.authorize_url(:redirect_uri => "https://jtj-dev.herokuapp.com/callback")
 		token = client.client_credentials.get_token
 		# p token
-		# response = token.get('/api/v1/me.json', :headers => { 'Authorization' =>  "Basic #{token}"})
-		# p response
+		response = token.get('/api/v1/me.json')
+		p response
 		# get_user_details token['access_token']
 		# get_user_details "accesstokenabcedefk"
 		p 'token created'
