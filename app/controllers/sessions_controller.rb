@@ -44,11 +44,25 @@ class SessionsController < ApplicationController
 		p "User created Successfully"
 		sign_in(@user)
 		p "User signed in Succesfully"
-		create_discourse_user
+		set_discourse_credentials
+		unless discourse_user?
+			create_discourse_user	
+		end
 	end
 
-	def create_discourse_user
-		set_discourse_credentials
+	def discourse_user?
+		begin
+			user = @client.user(@user.username)
+			if user.present?
+				true
+			else
+				false
+			end
+		rescue DiscourseApi::NotFoundError
+			false
+		end
+	end
+	def create_discourse_user		
 		user = @client.create_user(
 			name: @user.username,
 			email: @user.discourse_email,
