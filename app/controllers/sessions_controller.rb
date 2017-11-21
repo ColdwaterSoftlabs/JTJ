@@ -8,6 +8,11 @@ class SessionsController < ApplicationController
 	  		p params
 	  		@auth["code"]=params[:code]
 	  		@auth["state"]=params[:state]
+	  		client_id = ENV['JTJ_APPLICATION_ID']
+			client_secret = ENV['JTJ_APPLICATION_SECRET_KEY']
+			site = ENV['WATERMARK_BASE_URL']
+			redirect_uri = ENV['REDIRECT_URI']
+			client = OAuth2::Client.new(client_id, client_secret, :site => site)
 	  		token = client.auth_code.get_token(@auth['code'], :redirect_uri => redirect_uri)
 	  		#store access_token and refresh token
 	  		get_user_details token
