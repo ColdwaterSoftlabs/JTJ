@@ -5,10 +5,10 @@ class OauthController < ApplicationController
 	def oauth_create
 		client = OAuth2::Client.new(ENV['JTJ_APPLICATION_ID'], ENV['JTJ_APPLICATION_SECRET_KEY'], :site => ENV['WATERMARK_BASE_URL'])
 		client.auth_code.authorize_url(:redirect_uri => "https://jtj-dev.herokuapp.com/callback")
-		token = client.auth_code.get_token('authorization_code_value', :redirect_uri => 'https://jtj-dev.herokuapp.com/callback', :headers => {'Authorization' => 'Basic some_password'})
+		token = client.client_credentials.get_token
 		p token
 		response = token.get('/api/v1/me.json', :headers => { 'Authorization' =>  "Basic #{token}"})
-		p resonse
+		p response
 		# get_user_details token['access_token']
 		# get_user_details "accesstokenabcedefk"
 		p 'token created'
