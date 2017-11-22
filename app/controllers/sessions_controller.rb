@@ -31,7 +31,8 @@ class SessionsController < ApplicationController
 	  	user = JSON.parse(response.body)
 	  	email = user["email"]
 	  	first_name = user["first_name"]
-		create_user email, first_name
+	  	username = first_name.gsub(/\s+/, "")
+		create_user email, username
 	end
 
 	def create_user email, username
@@ -58,7 +59,7 @@ class SessionsController < ApplicationController
 			else
 				false
 			end
-		rescue DiscourseApi::NotFoundError
+		rescue DiscourseApi::NotFoundError => e
 			false
 		end
 	end
